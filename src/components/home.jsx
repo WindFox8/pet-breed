@@ -18,7 +18,7 @@ function home() {
             <button>Search</button>
         </form>
         <div>
-            <img src="./assets/dog.png" alt="dog" />
+            <img src="../src/assets/dog.png" alt="dog" />
         </div>
     </main>
   )
