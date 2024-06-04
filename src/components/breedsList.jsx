@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/breedsList.sass';
 
-function BreedsList({ page, offset, setOffset, petsData, setPetsData }) {
+function BreedsList({ page, offset, setOffset, petsData, setPetsData, setPetBreed }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   
@@ -20,7 +20,6 @@ function BreedsList({ page, offset, setOffset, petsData, setPetsData }) {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      setIsLoading(false);
       return response.json();
     })
     .then(data => {
@@ -38,20 +37,24 @@ function BreedsList({ page, offset, setOffset, petsData, setPetsData }) {
     setOffset(offset + 20);
   };
 
+  const handleBreedClick = (pet, breedName) => {
+    setPetBreed({ type: pet, breed: breedName });
+  };
+
   return (
-    <main>
+    <section className='breedsList'>
       <h1>{page === 1 ? 'Dog' : 'Cat'} BREEDS</h1>
       {error && <p>Error: {error}</p>}
       <ul>
-        {petsData && petsData.map(dog => (
-          <li key={dog.name}>
-            <img src={dog.image_link} alt={dog.name} />
-            <p>{dog.name}</p>
+        {petsData && petsData.map(pet => (
+          <li key={pet.name} onClick={() => handleBreedClick(page === 1 ? 'dogs' : 'cats', pet.name)}>
+            <img src={pet.image_link} alt={pet.name} />
+            <p>{pet.name}</p>
           </li>
         ))}
       </ul>
       <button onClick={handleButtonClick} disabled={isLoading}>{isLoading ? 'Loading' : 'Load More'}</button>
-    </main>
+    </section>
   );
 }
 

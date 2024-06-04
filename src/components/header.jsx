@@ -10,7 +10,7 @@ function Header({ setPage, setOffset, setPetsData}) {
 
   return (
     <header>
-      <div>
+      <div onClick={() => handleNavClick(0)}>
         <img src="./src/assets/paw.svg" alt="paw" />
         <h4>Pets Breeds</h4>
       </div>
