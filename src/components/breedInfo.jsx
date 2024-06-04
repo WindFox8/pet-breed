@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-function BreedInfo({ petBreed }) {
-  const [petData, setPetData] = useState(null);
+function BreedInfo({ petBreed, setPetBreed }) {
+  const [petsData, setPetsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -22,7 +22,7 @@ function BreedInfo({ petBreed }) {
       return response.json();
     })
     .then(data => {
-      setPetData(data[0]);
+      setPetsData(data);
       setIsLoading(false);
     })
     .catch(error => {
@@ -32,6 +32,10 @@ function BreedInfo({ petBreed }) {
     });
   }, [petBreed]);
 
+  const handleBreedClick = (pet, breedName) => {
+    setPetBreed({ type: pet, breed: breedName });
+  };
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -39,6 +43,21 @@ function BreedInfo({ petBreed }) {
   if (error) {
     return <div>Error: {error}</div>;
   }
+
+  if (petsData.length > 1) {
+    return (
+      <ul>
+        {petsData && petsData.map(pet => (
+          <li key={pet.name} onClick={() => handleBreedClick(petBreed.type, pet.name)}>
+            <img src={pet.image_link} alt={pet.name} />
+            <p>{pet.name}</p>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  const petData = petsData[0];
 
   if (!petData) {
     return null;

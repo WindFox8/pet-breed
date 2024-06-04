@@ -24,7 +24,7 @@ function App() {
       {(page === 1 || page === 2) && <BreedsList 
         page={page} offset={offset} setOffset={setOffset} petsData={petsData} setPetsData={setPetsData} setPetBreed={setPetBreed}
       />}
-      {page === 4 && <BreedInfo petBreed={petBreed} />}
+      {page === 4 && <BreedInfo petBreed={petBreed} setPetBreed={setPetBreed}/>}
     </>
   );
 }
