@@ -94,6 +94,7 @@ function Header({ setPage, setOffset, setPetsData }) {
               value={query} 
               onChange={(e) => setQuery(e.target.value)} 
               list="breed-options"
+              placeholder={category === 'dogs' ? 'Golden Retriever' : 'Maine Coon'}
             />
             <datalist id="breed-options">
               {petsData.map((pet, index) => (
