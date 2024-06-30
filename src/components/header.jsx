@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/header.sass';
 
-function Header({ setPage, setOffset, setPetsData }) {
+function Header({ page, setPage, setOffset, setPetsData }) {
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -81,9 +81,9 @@ function Header({ setPage, setOffset, setPetsData }) {
 
       { !showSearchBar ?
         <ul>
-          <li onClick={() => handleNavClick(0)}>Home</li>
-          <li onClick={() => handleNavClick(1)}>Dogs</li>
-          <li onClick={() => handleNavClick(2)}>Cats</li>
+          <li onClick={() => handleNavClick(0)} className={page == 0 && 'active'}>Home</li>
+          <li onClick={() => handleNavClick(1)} className={page == 1 && 'active'}>Dogs</li>
+          <li onClick={() => handleNavClick(2)} className={page == 2 && 'active'}>Cats</li>
           <li onClick={toggleShowSearchBar}><img src="./src/assets/glass.svg" alt="glass" /></li>
         </ul>
         :

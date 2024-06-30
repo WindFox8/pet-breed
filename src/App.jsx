@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <Header setPage={setPage} setOffset={setOffset} setPetsData={setPetsData} />
+      <Header page={page} setPage={setPage} setOffset={setOffset} setPetsData={setPetsData} />
       {page === 0 && <Home setPetBreed={setPetBreed}/>}
       {(page === 1 || page === 2) && <BreedsList 
         page={page} offset={offset} setOffset={setOffset} petsData={petsData} setPetsData={setPetsData} setPetBreed={setPetBreed}
