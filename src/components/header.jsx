@@ -76,7 +76,7 @@ function Header({ page, setPage, setOffset, setPetsData }) {
     <header>
       <div onClick={() => handleNavClick(0)}>
         <img src="./src/assets/paw.svg" alt="paw" />
-        <h4>Pets Breeds</h4>
+        <h4><span>Pets</span> Breeds</h4>
       </div>
 
       { !showSearchBar ?
@@ -88,7 +88,7 @@ function Header({ page, setPage, setOffset, setPetsData }) {
         </ul>
         :
         <form ref={formRef} onSubmit={handleSubmit}>
-          <div>
+          <div id='inputContainer'>
             <input 
               type="text" 
               value={query} 
@@ -111,7 +111,9 @@ function Header({ page, setPage, setOffset, setPetsData }) {
               <option value="cats">Cats</option>
             </select>
             <button type="submit" disabled={isLoading}>
-              {isLoading ? 'Searching...' : 'Search'}
+              {isLoading ? 
+              (<><img src="..\src\assets\spinner-solid.svg" alt="Loading"/></>) 
+              : 'Search'}
             </button>
           </div>
         </form>
