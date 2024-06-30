@@ -50,34 +50,39 @@ function Home({ setPetBreed }) {
     return (
         <main>
             <form onSubmit={handleSubmit}>
-                <h1>Search for a cat<br />or dog breed!</h1>
-                <p>Data for more than 200 cat and dog breeds</p>
-                <div>
-                    <input 
-                        type="text" 
-                        value={query} 
-                        onChange={(e) => setQuery(e.target.value)} 
-                        list="breed-options"
-                        placeholder={category === 'dogs' ? 'Golden Retriever' : 'Maine Coon'}
-                    />
-                    <datalist id="breed-options">
-                        {petsData.map((pet, index) => (
-                            <option key={index} value={pet.name} />
-                        ))}
-                    </datalist>
-                    <select 
-                        name="category" 
-                        id="category" 
-                        value={category} 
-                        onChange={(e) => setCategory(e.target.value)}
-                    >
-                        <option value="dogs">Dogs</option>
-                        <option value="cats">Cats</option>
-                    </select>
+                <div id='container'>
+                    <h1>Search for a cat<br />or dog <span>breed!</span></h1>
+                    <p>Data for more than 200 cat and dog breeds</p>
+                    <div id='inputContainer'>
+                        <input 
+                            type="text" 
+                            value={query} 
+                            onChange={(e) => setQuery(e.target.value)} 
+                            list="breed-options"
+                            placeholder={category === 'dogs' ? 'Golden Retriever' : 'Maine Coon'}
+                        />
+                        <datalist id="breed-options">
+                            {petsData.map((pet, index) => (
+                                <option key={index} value={pet.name} />
+                            ))}
+                        </datalist>
+                        <select 
+                            name="category" 
+                            id="category" 
+                            value={category} 
+                            onChange={(e) => setCategory(e.target.value)}
+                        >
+                            <option value="dogs">Dogs</option>
+                            <option value="cats">Cats</option>
+                        </select>
+                        <button type="submit" disabled={isLoading}>
+                            {isLoading ? 
+                            (<><img src="..\src\assets\spinner-solid.svg" alt="Loading"/></>) 
+                            : 'Search'}
+                        </button>
+                    </div>
                 </div>
-                <button type="submit" disabled={isLoading}>
-                    {isLoading ? 'Searching...' : 'Search'}
-                </button>
+                
             </form>
             {error && <p style={{color: 'red'}}>{error}</p>}
             <div>
