@@ -1,21 +1,38 @@
+@use "../variables" as var
+
 header
     display: flex
     justify-content: space-between
-    padding: 2em 7em
+    align-items: center
+    padding: 0 7em
     position: fixed
     height: 5rem
     width: 100vw
     background-color: white
-    border-bottom: 1px solid black
+    border-bottom: 1px solid var.$color-3
+    background: none
+    font-family: var.$font-1
+    color: var.$color-3
 
     div
         display: flex
         cursor: pointer
+        gap: 10px
+        &:hover
+            img
+                animation: shake 1s infinite alternate
+
+        h4
+            font-size: 2em
 
         img
-            width: 20px
+            width: 2em
 
-        
+        @keyframes shake
+            from
+                transform: rotate(45deg)
+            to  
+                transform: rotate(-45deg)
 
     ul
         display: flex
@@ -24,5 +41,7 @@ header
 
         li
             cursor: pointer
-            img
-                width: 15px
+            font-size: 1.2em
+
+.active
+    border-bottom: 1px solid var.$color-3
