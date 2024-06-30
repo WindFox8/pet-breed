@@ -43,7 +43,7 @@ function BreedsList({ page, offset, setOffset, petsData, setPetsData, setPetBree
 
   return (
     <section className='breedsList'>
-      <h1>{page === 1 ? 'Dog' : 'Cat'} BREEDS</h1>
+      <h1>{page === 1 ? 'Dog' : 'Cat'} <span>Breeds</span></h1>
       {error && <p>Error: {error}</p>}
       <ul>
         {petsData && petsData.map(pet => (
@@ -53,7 +53,9 @@ function BreedsList({ page, offset, setOffset, petsData, setPetsData, setPetBree
           </li>
         ))}
       </ul>
-      <button onClick={handleButtonClick} disabled={isLoading}>{isLoading ? 'Loading' : 'Load More'}</button>
+      <button onClick={handleButtonClick} disabled={isLoading}>
+        {isLoading ? (<><img src="..\src\assets\spinner-solid.svg" alt="Loading"/></>) : 'Load More'}
+      </button>
     </section>
   );
 }
