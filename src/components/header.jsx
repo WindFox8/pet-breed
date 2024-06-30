@@ -73,7 +73,7 @@ function Header({ page, setPage, setOffset, setPetsData }) {
   }, [formRef]);
 
   return (
-    <header>
+    <header className={page == 0 || page == 4 ? 'home' : 'breeds'}>
       <div onClick={() => handleNavClick(0)}>
         <img src="./src/assets/paw.svg" alt="paw" />
         <h4><span>Pets</span> Breeds</h4>
