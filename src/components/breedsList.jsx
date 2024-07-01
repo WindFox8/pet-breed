@@ -54,7 +54,7 @@ function BreedsList({ page, offset, setOffset, petsData, setPetsData, setPetBree
         ))}
       </ul>
       <button onClick={handleButtonClick} disabled={isLoading}>
-        {isLoading ? (<><img src="..\src\assets\spinner-solid.svg" alt="Loading"/></>) : 'Load More'}
+        {isLoading ? (<><img src="..\assets\spinner-solid.svg" alt="Loading"/></>) : 'Load More'}
       </button>
     </section>
   );
