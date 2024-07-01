@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/breedInfo.sass';
 
 function BreedInfo({ petBreed, setPetBreed }) {
   const [petsData, setPetsData] = useState([]);
@@ -65,10 +66,8 @@ function BreedInfo({ petBreed, setPetBreed }) {
 
   return (
     <main>
-      <h1>{petData.name}</h1>
-      <img src={petData.image_link} alt={petData.name} />
-      {petBreed.type === 'dog' ? (
-        <div>
+      {petBreed.type === 'dogs' ? (
+        <div className='infoBreedLeft'>
           <p>Good with children: {petData.good_with_children}</p>
           <p>Good with other dogs: {petData.good_with_other_dogs}</p>
           <p>Shedding: {petData.shedding}</p>
@@ -88,7 +87,7 @@ function BreedInfo({ petBreed, setPetBreed }) {
           <p>Weight (Female): {petData.min_weight_female} - {petData.max_weight_female} lbs</p>
         </div>
       ) : (
-        <div>
+        <div className='infoBreedLeft'>
           <p>Length: {petData.length}</p>
           <p>Origin: {petData.origin}</p>
           <p>Family friendly: {petData.family_friendly}</p>
@@ -103,6 +102,11 @@ function BreedInfo({ petBreed, setPetBreed }) {
           <p>Weight: {petData.min_weight} - {petData.max_weight} lbs</p>
         </div>
       )}
+      <div className='infoBreedRight'>
+        <h1>{petData.name}</h1>
+        <br />
+        <img src={petData.image_link} alt={petData.name} />
+      </div>
     </main>
   );
 }
