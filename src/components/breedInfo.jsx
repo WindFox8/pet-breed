@@ -68,18 +68,18 @@ function BreedInfo({ petBreed, setPetBreed }) {
     <main>
       {petBreed.type === 'dogs' ? (
         <div className='infoBreedLeft'>
-          <p>Good with children: {petData.good_with_children}</p>
-          <p>Good with other dogs: {petData.good_with_other_dogs}</p>
-          <p>Shedding: {petData.shedding}</p>
-          <p>Grooming: {petData.grooming}</p>
-          <p>Drooling: {petData.drooling}</p>
-          <p>Coat length: {petData.coat_length}</p>
-          <p>Good with strangers: {petData.good_with_strangers}</p>
-          <p>Playfulness: {petData.playfulness}</p>
-          <p>Protectiveness: {petData.protectiveness}</p>
-          <p>Trainability: {petData.trainability}</p>
-          <p>Energy: {petData.energy}</p>
-          <p>Barking: {petData.barking}</p>
+          <p>Good with children (1 - 5): {petData.good_with_children}</p>
+          <p>Good with other dogs (1 - 5): {petData.good_with_other_dogs}</p>
+          <p>Shedding (1 - 5): {petData.shedding}</p>
+          <p>Grooming (1 - 5): {petData.grooming}</p>
+          <p>Drooling (1 - 5): {petData.drooling}</p>
+          <p>Coat length (1 - 5): {petData.coat_length}</p>
+          <p>Good with strangers (1 - 5): {petData.good_with_strangers}</p>
+          <p>Playfulness (1 - 5): {petData.playfulness}</p>
+          <p>Protectiveness (1 - 5): {petData.protectiveness}</p>
+          <p>Trainability (1 - 5): {petData.trainability}</p>
+          <p>Energy (1 - 5): {petData.energy}</p>
+          <p>Barking (1 - 5): {petData.barking}</p>
           <p>Life expectancy: {petData.min_life_expectancy} - {petData.max_life_expectancy} years</p>
           <p>Height (Male): {petData.min_height_male} - {petData.max_height_male} inches</p>
           <p>Height (Female): {petData.min_height_female} - {petData.max_height_female} inches</p>
@@ -90,14 +90,14 @@ function BreedInfo({ petBreed, setPetBreed }) {
         <div className='infoBreedLeft'>
           <p>Length: {petData.length}</p>
           <p>Origin: {petData.origin}</p>
-          <p>Family friendly: {petData.family_friendly}</p>
-          <p>Shedding: {petData.shedding}</p>
-          <p>General health: {petData.general_health}</p>
-          <p>Playfulness: {petData.playfulness}</p>
-          <p>Children friendly: {petData.children_friendly}</p>
-          <p>Grooming: {petData.grooming}</p>
-          <p>Intelligence: {petData.intelligence}</p>
-          <p>Other pets friendly: {petData.other_pets_friendly}</p>
+          <p>Family friendly (1 - 5): {petData.family_friendly}</p>
+          <p>Shedding (1 - 5): {petData.shedding}</p>
+          <p>General health (1 - 5): {petData.general_health}</p>
+          <p>Playfulness (1 - 5): {petData.playfulness}</p>
+          <p>Children friendly (1 - 5): {petData.children_friendly}</p>
+          <p>Grooming (1 - 5): {petData.grooming}</p>
+          <p>Intelligence (1 - 5): {petData.intelligence}</p>
+          <p>Other pets friendly (1 - 5): {petData.other_pets_friendly}</p>
           <p>Life expectancy: {petData.min_life_expectancy} - {petData.max_life_expectancy} years</p>
           <p>Weight: {petData.min_weight} - {petData.max_weight} lbs</p>
         </div>
