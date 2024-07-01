@@ -75,7 +75,7 @@ function Header({ page, setPage, setOffset, setPetsData }) {
   return (
     <header className={page == 0 || page == 4 ? 'home' : 'breeds'}>
       <div onClick={() => handleNavClick(0)}>
-        <img src="./src/assets/paw.svg" alt="paw" />
+        <img src="../assets/paw.svg" alt="paw" />
         <h4><span>Pets</span> Breeds</h4>
       </div>
 
@@ -84,7 +84,7 @@ function Header({ page, setPage, setOffset, setPetsData }) {
           <li onClick={() => handleNavClick(0)} className={page == 0 && 'active'}>Home</li>
           <li onClick={() => handleNavClick(1)} className={page == 1 && 'active'}>Dogs</li>
           <li onClick={() => handleNavClick(2)} className={page == 2 && 'active'}>Cats</li>
-          <li onClick={toggleShowSearchBar}><img src="./src/assets/glass.svg" alt="glass" /></li>
+          <li onClick={toggleShowSearchBar}><img src="../assets/glass.svg" alt="glass" /></li>
         </ul>
         :
         <form ref={formRef} onSubmit={handleSubmit}>
@@ -112,7 +112,7 @@ function Header({ page, setPage, setOffset, setPetsData }) {
             </select>
             <button type="submit" disabled={isLoading}>
               {isLoading ? 
-              (<><img src="..\src\assets\spinner-solid.svg" alt="Loading"/></>) 
+              (<><img src="..\assets\spinner-solid.svg" alt="Loading"/></>) 
               : 'Search'}
             </button>
           </div>

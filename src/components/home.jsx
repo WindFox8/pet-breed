@@ -77,7 +77,7 @@ function Home({ setPetBreed }) {
                         </select>
                         <button type="submit" disabled={isLoading}>
                             {isLoading ? 
-                            (<><img src="..\src\assets\spinner-solid.svg" alt="Loading"/></>) 
+                            (<><img src="..\assets\spinner-solid.svg" alt="Loading"/></>) 
                             : 'Search'}
                         </button>
                     </div>
@@ -86,7 +86,7 @@ function Home({ setPetBreed }) {
             </form>
             {error && <p style={{color: 'red'}}>{error}</p>}
             <div>
-                <img src="../src/assets/dog.png" alt="dog" />
+                <img src="../assets/dog.png" alt="dog" />
             </div>
         </main>
     );
