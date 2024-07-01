@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import spinnerImage from '../assets/spinner-solid.svg';
 import '../styles/breedsList.sass';
 
 function BreedsList({ page, offset, setOffset, petsData, setPetsData, setPetBreed }) {
@@ -54,7 +55,7 @@ function BreedsList({ page, offset, setOffset, petsData, setPetsData, setPetBree
         ))}
       </ul>
       <button onClick={handleButtonClick} disabled={isLoading}>
-        {isLoading ? (<><img src="..\assets\spinner-solid.svg" alt="Loading"/></>) : 'Load More'}
+        {isLoading ? (<><img src={spinnerImage} alt="Loading"/></>) : 'Load More'}
       </button>
     </section>
   );

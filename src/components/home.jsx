@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import spinnerImage from '../assets/spinner-solid.svg';
+import dogImage from '../assets/dog.png';
 import '../styles/home.sass';
 
 function Home({ setPetBreed }) {
@@ -77,7 +79,7 @@ function Home({ setPetBreed }) {
                         </select>
                         <button type="submit" disabled={isLoading}>
                             {isLoading ? 
-                            (<><img src="..\assets\spinner-solid.svg" alt="Loading"/></>) 
+                            (<><img src={spinnerImage} alt="Loading"/></>) 
                             : 'Search'}
                         </button>
                     </div>
@@ -86,7 +88,7 @@ function Home({ setPetBreed }) {
             </form>
             {error && <p style={{color: 'red'}}>{error}</p>}
             <div>
-                <img src="../assets/dog.png" alt="dog" />
+                <img src={dogImage} alt="dog" />
             </div>
         </main>
     );

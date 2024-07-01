@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import pawImage from '../assets/paw.svg';
+import glassImage from '../assets/glass.svg';
+import spinnerImage from '../assets/spinner-solid.svg';
 import '../styles/header.sass';
 
 function Header({ page, setPage, setOffset, setPetsData }) {
@@ -73,18 +76,18 @@ function Header({ page, setPage, setOffset, setPetsData }) {
   }, [formRef]);
 
   return (
-    <header className={page == 0 || page == 4 ? 'home' : 'breeds'}>
+    <header className={page === 0 || page === 4 ? 'home' : 'breeds'}>
       <div onClick={() => handleNavClick(0)}>
-        <img src="../assets/paw.svg" alt="paw" />
+        <img src={pawImage} alt="paw" />
         <h4><span>Pets</span> Breeds</h4>
       </div>
 
       { !showSearchBar ?
         <ul>
-          <li onClick={() => handleNavClick(0)} className={page == 0 && 'active'}>Home</li>
-          <li onClick={() => handleNavClick(1)} className={page == 1 && 'active'}>Dogs</li>
-          <li onClick={() => handleNavClick(2)} className={page == 2 && 'active'}>Cats</li>
-          <li onClick={toggleShowSearchBar}><img src="../assets/glass.svg" alt="glass" /></li>
+          <li onClick={() => handleNavClick(0)} className={page === 0 ? 'active' : ''}>Home</li>
+          <li onClick={() => handleNavClick(1)} className={page === 1 ? 'active' : ''}>Dogs</li>
+          <li onClick={() => handleNavClick(2)} className={page === 2 ? 'active' : ''}>Cats</li>
+          <li onClick={toggleShowSearchBar}><img src={glassImage} alt="glass" /></li>
         </ul>
         :
         <form ref={formRef} onSubmit={handleSubmit}>
@@ -112,7 +115,7 @@ function Header({ page, setPage, setOffset, setPetsData }) {
             </select>
             <button type="submit" disabled={isLoading}>
               {isLoading ? 
-              (<><img src="..\assets\spinner-solid.svg" alt="Loading"/></>) 
+              (<><img src={spinnerImage} alt="Loading"/></>) 
               : 'Search'}
             </button>
           </div>
